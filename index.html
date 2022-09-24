@@ -1,15 +1,34 @@
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
         <meta name="author" content="Susan Briggs">
         <meta name="description" content="Learning project - movie watchlist app from Scrimba.com">
         <title>Susan's Scrimba.com Movie Watchlist</title>
         <meta name="keywords" content="JavaScript, Scrimba, Movies, Watchlist, OMDbAPI">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <a href="index.html" class="currentPage">find a movie</a>
-        <a href="watchlist.html">my watchlist</a>
+        <nav>
+            <a href="index.html" class="currentPage">find a movie</a>
+            <a href="watchlist.html">my watchlist</a>
+        </nav>
+        <main>
+            <div id="searchBar">
+                <div>
+                    <i class="material-icons">search</i>
+                    <input id="searchInput" type="text" placeholder="Search for a movie">
+                </div>
+                <button id="searchBtn">Search</button>
+
+            </div>
+            <section id="movieList" class="initial-state">
+                <p id="no-data-state" style="display: none">Unable to find what you're looking for. Please try another search.</p>
+            </section>
+        </main>
         <script src="index.js"></script>
     </body>
 </html>

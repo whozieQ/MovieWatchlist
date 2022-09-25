@@ -13,14 +13,16 @@ html, body {
     cursor: default;
     font-weight: 800;
 }
+
 nav{
-    height: 25vh;
+    height: 20vh;
     background: rgba(0,0,0,.5);
     display: flex;
     justify-content: space-between;
     align-items: end;
     padding: 0 2.5rem 2.5rem 2.5rem;
-    background-image: url(https://images.unsplash.com/photo-1586081467622-7acbbc73da3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    background-image: url(https://images.unsplash.com/photo-1623475329493-889804e377f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1586081467622-7acbbc73da3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80); */
     /* background-image: url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80); */
     /* background-image: url(https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80); */
     background-size: cover;
@@ -37,21 +39,26 @@ nav a{
 }
 #movieList{
     background-color: white;
-    height: 75vh;
-    /* display: flex; */
+    height: 65vh;
 }
 .initial-state{
     background-image: url(images/no-data-initial.png);
     background-position: center;
     background-repeat: no-repeat;
 }
-#no-data-state{
-    text-align: center;
+.no-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.no-data-state{
     font-size: 2rem;
     color: #DFDDDD;
-    display: block;
-    padding: 20%;    
+    max-width: 60%;
+    text-align: center;
 }
+
 #searchBar{
     width: 80%;
     border-radius: 6px;
@@ -89,10 +96,37 @@ nav a{
     padding-left: 1rem;
     width: 100%;
 }
+#searchInput:focus{
+/* hide the outline when input has focus - it looks ugly */
+    outline:none
+}
 #searchBar div{
     display: flex;
     width: 80%;
-
+}
+#resultInfo{
+    font-size: .75rem;
+    font-style: italic;
+    margin: 0;
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    width: 50%;
+    font-size: .75rem;
+}
+#paginationBtns{
+    display: flex;
+    width: 35%;
+    margin-bottom: 2rem;
+}
+#pagination{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 article{
     display: flex;

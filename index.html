@@ -14,7 +14,7 @@
     <body>
         <nav>
             <a href="index.html" class="currentPage">find a movie</a>
-            <a href="watchlist.html">my watchlist</a>
+            <a href="watchlist.html" class="large">my watchlist</a>
         </nav>
         <main>
             <div id="searchBar">
@@ -22,19 +22,19 @@
                     <i class="material-icons">search</i>
                     <input id="searchInput" type="text" title="Must be 4 characters or longer" minlength="4" placeholder="Search for a movie">
                 </div>
-                <button id="searchBtn" >Search</button>
+                <button id="searchBtn" class="large">Search</button>
             </div>
-            <div id="pagination">
-                <p id="resultInfo"></p> 
+            <div id="pagination" class="smallLight">
+                <p id="resultInfo" class="smallLight"></p> 
                 <div id="paginationBtns">
-                    <button class="pagination" id="previousPage" disabled><i class="material-icons">navigate_before</i> Previous 10</button>
-                    <button class="pagination" id="nextPage" disabled>Next 10<i class="material-icons">navigate_next</i></button>
+                    <button class="pagination smallLight" id="previousPage" disabled><i class="material-icons">navigate_before</i> Previous 10</button>
+                    <button class="pagination smallLight" id="nextPage" disabled>Next 10<i class="material-icons">navigate_next</i></button>
                 </div>
             </div>
             <section id="movieList" class="initial-state">
+                <p class="no-data-state" style="display:none">Unable to find what you are looking for. Please try another search.</p>
             </section>
         </main>
         <script src="index.js" type="module"></script>
-        <script src="utils.js" type="module"></script>
     </body>
 </html>

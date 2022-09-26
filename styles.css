@@ -9,9 +9,7 @@ html, body {
     font-family: 'Inter', sans-serif;
 }
 .currentPage{
-    font-size: 3rem;
     cursor: default;
-    font-weight: 800;
 }
 
 nav{
@@ -22,24 +20,18 @@ nav{
     align-items: end;
     padding: 0 2.5rem 2.5rem 2.5rem;
     background-image: url(https://images.unsplash.com/photo-1623475329493-889804e377f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80);
-    /* background-image: url(https://images.unsplash.com/photo-1586081467622-7acbbc73da3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80); */
-    /* background-image: url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80); */
-    /* background-image: url(https://images.unsplash.com/photo-1460881680858-30d872d5b530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80); */
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;    
 }
 nav a{
-    color: white;
-    font-size: 1.2rem;
-    text-decoration: none;
     margin-left: 2rem;
     margin-right: 2rem;
-    font-weight: 700;
 }
 #movieList{
     background-color: white;
     height: 65vh;
+    margin-top: 2rem;
 }
 .initial-state{
     background-image: url(images/no-data-initial.png);
@@ -53,8 +45,6 @@ nav a{
     align-items: center;
 }
 .no-data-state{
-    font-size: 2rem;
-    color: #DFDDDD;
     max-width: 60%;
     text-align: center;
 }
@@ -78,9 +68,6 @@ nav a{
     background-color: #D1D5DB;
     padding: 9px 11px 9px 17px;
     border: 1px solid #D1D5DB;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
     position: absolute;
     right: 0;
     cursor: pointer;
@@ -92,7 +79,6 @@ nav a{
 }
 #searchInput{
     border: none;
-    font-size: 1.1rem;
     padding-left: 1rem;
     width: 100%;
 }
@@ -105,22 +91,17 @@ nav a{
     width: 80%;
 }
 #resultInfo{
-    font-size: .75rem;
-    font-style: italic;
     margin: 0;
 }
 .pagination{
     display: flex;
     align-items: center;
-    font-family: 'Inter', sans-serif;
     justify-content: center;
     width: 50%;
-    font-size: .75rem;
 }
 #paginationBtns{
     display: flex;
     width: 35%;
-    margin-bottom: 2rem;
 }
 #pagination{
     display: flex;
@@ -148,25 +129,12 @@ article * {
 }
 .movieTitle{
     margin-right: 2rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
     max-width: 75%;
-}
-.rating{
-    font-weight: 400;
-    font-size: .75rem;
-}
-.mPlot{
-    font-weight: 400;
-    font-size: 1rem;
 }
 .mData{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: .75rem;
-    font-weight: 400;
     margin-top: .75rem;
     margin-bottom: .75rem;
 }
@@ -176,15 +144,64 @@ article * {
     flex-direction: column;
     justify-content: space-between;
 }
-.addToWatchlist{
+.watchlistBtn{
     border: none;
     background-color: white;
-    font-weight: 400;
-    font-size: .75rem;
     cursor: pointer;
 }
-.addToWatchlist i{
-    font-size: 1rem;
+.watchlistBtn i{
     vertical-align: middle;
     padding-right: .25rem;
+}
+#btn-searchPage{
+    font-size: 1.2rem;
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding: 1.5rem;
+    text-decoration: none;
+}
+#btn-searchPage:visited{
+    text-decoration: none;
+    color: black;
+}
+#btn-searchPage i{
+    padding-right: .4rem;
+    vertical-align: middle;
+}
+
+/* typography */
+.watchlistBtn i{
+    font-size: 1rem;
+}
+.smallLight{
+    font-weight: 400;
+    font-size: .75rem;
+    font-family: 'Inter', sans-serif;
+}
+.large{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.mPlot{
+    font-size: 1rem;
+    font-weight: 400;
+}
+#resultInfo{
+    font-style: italic;
+}
+#searchInput{
+    font-size: 1.1rem;
+}
+.currentPage{
+    font-size: 3rem;
+    font-weight: 800;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+}
+.no-data-state{
+    color: #DFDDDD;
+    font-size: 2rem;
 }

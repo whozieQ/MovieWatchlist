@@ -6,15 +6,17 @@
         <meta name="description" content="Learning project - movie watchlist app from Scrimba.com">
         <title>Susan's Scrimba.com Movie Watchlist</title>
         <meta name="keywords" content="JavaScript, Scrimba, Movies, Watchlist, OMDbAPI">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
         <nav>
-            <a href="index.html">find a movie</a>
+            <a href="index.html" class="large">find a movie</a>
             <a href="watchlist.html" class="currentPage">my watchlist</a>
         </nav>
         <main>
             <section id="movieList" class="no-data">
                 <p class="no-data-state">Your watchlist is looking a little empty...</p>
+                <a id="btn-searchPage" class="large no-data-state" href="index.html"><i class="material-icons">add_circle</i> Let's add some movies!</a>
             </section>
         </main>
 

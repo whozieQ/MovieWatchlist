@@ -29,6 +29,7 @@ const btnContext = Object.freeze({
 //click on add to watchlist button
 movieListSection.addEventListener("click", (e) => {
     if (e.target.classList.contains('addToWatchlist')) {
+        alert("got it")
         //get movie imdbID - watchlist buttons have ID in the form of "btn-imdbID"
         const btnID = e.target.getAttribute("id")       
         const index =  searchedMovies.findIndex(element => element.imdbID === btnID.substring(4,btnID.length))

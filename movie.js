@@ -43,7 +43,6 @@ export class Movie {
         //and based on whether it is on the watchlist already or not
         const button = document.getElementById(`btn-${this.imdbID}`)
         const icon = document.createElement("i")
-        icon.classList.add("material-icons")
         if (listType === "searchPage"){
             if (isOnWatchlist){
                 //html with a disabled button and no icon
@@ -57,6 +56,7 @@ export class Movie {
                 if (screen.width < 500){
                     button.innerHTML = `<i class="material-symbols-outlined">heart_plus<i>`
                 } else {
+                    icon.classList.add("material-icons")
                     button.textContent = "Watchlist"
                     icon.textContent = "add_circle"
                 }
@@ -70,6 +70,7 @@ export class Movie {
             if (screen.width < 500){
                 button.innerHTML = `<i class="material-symbols-outlined">heart_minus<i>`
             } else {
+                icon.classList.add("material-icons")
                 button.textContent = "Remove"
                 icon.textContent = "cancel"
             }

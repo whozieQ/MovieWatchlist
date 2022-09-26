@@ -160,6 +160,7 @@ article * {
     cursor: pointer;
     padding: 1.5rem;
     text-decoration: none;
+    color: black;
 }
 #btn-searchPage:visited{
     text-decoration: none;

@@ -30,7 +30,7 @@ export class Movie {
         </div>`
     }
     async setDetails(){
-        const response = await fetch(`http://www.omdbapi.com/?&apikey=8f10a4d2&i=${this.imdbID}`) 
+        const response = await fetch(`https://www.omdbapi.com/?&apikey=8f10a4d2&i=${this.imdbID}`) 
         const result = await response.json()
         this.Genre = result.Genre
         this.Plot = result.Plot

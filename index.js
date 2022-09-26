@@ -146,7 +146,7 @@ async function showResults(context){
 async function getSearchResults(){
     //get one page of search results
     //use currentResultsPage to determine which page of results to show
-    const url = `http://www.omdbapi.com/?&apikey=8f10a4d2&s=${currentSearch}&type=movie&page=${currentResultsPage}`
+    const url = `https://www.omdbapi.com/?&apikey=8f10a4d2&s=${currentSearch}&type=movie&page=${currentResultsPage}`
     const response = await fetch(url)
     const result = await response.json()
     return result

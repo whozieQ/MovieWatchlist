@@ -71,6 +71,7 @@ nav a{
     position: absolute;
     right: 0;
     cursor: pointer;
+    height: 100%;
 }
 #searchBtn:hover,
 #searchBtn:focus{
@@ -205,4 +206,16 @@ nav a{
 .no-data-state{
     color: #DFDDDD;
     font-size: 2rem;
+}
+@media(max-width: 500px){
+    html,
+    body{
+        font-size: 10px;
+    }
+    article{
+        width: 90%;
+    }
+    .watchlistBtn i{
+        font-size: 1.5rem;
+    }
 }

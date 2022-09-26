@@ -53,20 +53,30 @@ export class Movie {
             } else {
                 //html with an add button because we must be on the search page
                 button.classList.add("addToWatchlist") 
-                button.textContent = "Watchlist"
                 button.disabled = false
-                icon.textContent = "add_circle"
+                if (screen.width < 500){
+                    button.innerHTML = `<i class="material-symbols-outlined">heart_plus<i>`
+                } else {
+                    button.textContent = "Watchlist"
+                    icon.textContent = "add_circle"
+                }
                 button.insertAdjacentElement("afterbegin", icon)
             }
         }
         if (listType === "watchlistPage"){ 
             //html with a Remove button
             button.classList.add("removeFromWatchlist") 
-            button.textContent = "Remove"
             button.disabled = false
-            icon.textContent = "cancel"
-            button.insertAdjacentElement("afterbegin", icon)
+            if (screen.width < 500){
+                button.innerHTML = `<i class="material-symbols-outlined">heart_minus<i>`
+            } else {
+                button.textContent = "Remove"
+                icon.textContent = "cancel"
+            }
+        button.insertAdjacentElement("afterbegin", icon)
         } 
+        if (screen.width < 500){
+        }
     }
 
 }

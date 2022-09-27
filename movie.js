@@ -1,3 +1,5 @@
+import { listContext } from "./utils.js"
+
 export class Movie {
     constructor(data){
             this.Title = data.Title
@@ -42,8 +44,11 @@ export class Movie {
         //create proper HTML for the watchlist button based on which page this is
         //and based on whether it is on the watchlist already or not
         const button = document.getElementById(`btn-${this.imdbID}`)
+        //clear any existing button content
+        button.innerHTML = ""
         const icon = document.createElement("i")
-        if (listType === "searchPage"){
+        icon.id = `ico-${this.imdbID}`
+        if (listType === listContext.search){
             if (isOnWatchlist){
                 //html with a disabled button and no icon
                 button.classList.add("addToWatchlist") 
@@ -54,23 +59,31 @@ export class Movie {
                 button.classList.add("addToWatchlist") 
                 button.disabled = false
                 if (screen.width < 500){
-                    button.innerHTML = `<i class="material-symbols-outlined">heart_plus<i>`
+                    button.textContent = ""
+                    icon.classList.add("material-symbols-outlined")
+                    icon.classList.add("addToWatchlist")
+                    icon.textContent = "heart_plus"
                 } else {
-                    icon.classList.add("material-icons")
                     button.textContent = "Watchlist"
+                    icon.classList.add("material-icons")
+                    icon.classList.add("addToWatchlist")
                     icon.textContent = "add_circle"
                 }
                 button.insertAdjacentElement("afterbegin", icon)
             }
         }
-        if (listType === "watchlistPage"){ 
+        if (listType === listContext.watchlist){ 
             //html with a Remove button
             button.classList.add("removeFromWatchlist") 
             button.disabled = false
+            button.textContent = ''
             if (screen.width < 500){
-                button.innerHTML = `<i class="material-symbols-outlined">heart_minus<i>`
-            } else {
+                icon.classList.add("material-symbols-outlined")
+                icon.classList.add("removeFromWatchlist")
+                icon.textContent = "heart_minus"
+        } else {
                 icon.classList.add("material-icons")
+                icon.classList.add("removeFromWatchlist")
                 button.textContent = "Remove"
                 icon.textContent = "cancel"
             }

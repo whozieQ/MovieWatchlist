@@ -9,3 +9,9 @@ export function deleteArticles(){
         line.parentNode.removeChild(line)
     })
 }
+
+export const listContext = Object.freeze({
+    search: 0,
+    watchlist: 1
+})
+

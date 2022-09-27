@@ -1,6 +1,6 @@
 // imports
 import { Movie } from "./movie.js"
-import { deleteArticles } from "./utils.js"
+import { deleteArticles, listContext } from "./utils.js"
 import { updateStoredWatchlist, watchlistMovies } from "./watchlist.js"
 
 
@@ -15,28 +15,30 @@ const noDataMsgEl = document.querySelector(".no-data-state")
 export let searchedMovies = []
 let currentResultsPage = 0
 let currentSearch
-const listContext = Object.freeze({
-    search: 0,
-    watchlist: 1
-})
 const btnContext = Object.freeze({
     new: 0,
     next: 1,
     previous: 2
 })
 
+if (screen.width > 500){
+    document.getElementById("previousPage").innerHTML = `<i class="material-icons">navigate_before</i>Previous 10`
+    document.getElementById("nextPage").innerHTML = `Next 10<i class="material-icons">navigate_next</i>`
+}
+
+
 //------------event listeners---------------
 //click on add to watchlist button
 movieListSection.addEventListener("click", (e) => {
     if (e.target.classList.contains('addToWatchlist')) {
-        alert("got it")
         //get movie imdbID - watchlist buttons have ID in the form of "btn-imdbID"
         const btnID = e.target.getAttribute("id")       
         const index =  searchedMovies.findIndex(element => element.imdbID === btnID.substring(4,btnID.length))
         watchlistMovies.push(searchedMovies[index])
         updateStoredWatchlist()
-        document.getElementById(btnID).disabled = true
-        document.getElementById(btnID).textContent = "On Watchlist"
+        searchedMovies[index].setWatchlistButton(true, listContext.search)
+        // document.getElementById(btnID).disabled = true
+        // document.getElementById(btnID).textContent = "On Watchlist"
     }
 })
 
@@ -133,7 +135,7 @@ async function showResults(context){
         article.setAttribute("id",`movie-${movie.imdbID}`)
         article.classList.add(`${movie.imdbID}`)
         movieListSection.appendChild(article)
-        movie.setWatchlistButton(onWatchlist,"searchPage")
+        movie.setWatchlistButton(onWatchlist,listContext.search)
     //put a line between each movie entry
         const line = document.createElement("hr")
         line.style.width = "50%"

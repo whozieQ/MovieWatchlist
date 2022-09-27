@@ -1,6 +1,6 @@
 //imports
 import { Movie } from "./movie.js"
-import { deleteArticles } from "./utils.js"
+import { deleteArticles, listContext } from "./utils.js"
 
 //DOM objects
 const movieListSection = document.getElementById("movieList")
@@ -62,7 +62,7 @@ function renderWatchlist(){
             article.innerHTML = watchlistMovies[i].getHTML(true)
             article.setAttribute("id",`movie-${watchlistMovies[i].imdbID}`)
             movieListSection.appendChild(article)
-            watchlistMovies[i].setWatchlistButton(true,"watchlistPage")
+            watchlistMovies[i].setWatchlistButton(true,listContext.watchlist)
             //put a line between each movie entry
             const line = document.createElement("hr")
             line.style.width = "50%"
